@@ -5,10 +5,11 @@ import AnswersItem from './AnswerItem/AnswerItem';
 const AnswersList = (props) => {
   return(
   <ul className={classes.AnswersList}>
-    {props.answers.map((item, index) => {
+    {props.answers.map((item) => {
         return (
-          <AnswersItem key={index}
+          <AnswersItem key={item.id}
             answer={item}
+            onAnswerClick={() => props.onAnswerClick(item.id)}
           />
         )
     })} 
